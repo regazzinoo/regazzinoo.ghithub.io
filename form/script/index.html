@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>utilizzo delle form</title>
+    <script type="text/javascript" language="javascript">
+        function validaform(){
+            if(document.registrazione.cognome.value == "")
+            {
+               alert("inserisci il cognome");
+               return false;
+            }
+            if(document.registrazione.nome.value == "")
+            {
+               alert("inserisci il nome");
+               return false;
+            }
+            if(document.registrazione.regione.value == "scimmia")
+            {
+               document.getElementById("feedback").innerHTML="la matricola deve essere un numero"
+               return false;
+            }
+            let tmp = parseInt(document.registrazione.matricola.value)
+            if(isNaN(tmp)){
+                document.getElementById("feedback").innerHTML="la matricola deve essere un numero"
+                return false;
+            }
+            if(document.registrazione.regione.value == "")
+            {
+                document.getElementById("feedback").innerHTML="scegliere regione"
+               return false;
+            }
+            if(document.registrazione.email.value == "" && document.registrazione.tel.value == ""){
+                document.getElementById("feedback").innerHTML="entrambi i campi devono essere corretti"
+                return false;
+            }
+            document.getElementById("feedback").innerHTML="dati corretti"
+        }
+        
+    </script>
+</head>
+<body>
+    <h1 align="center">PROVIAMO AD USARE LE FORM</h1>
+    <form name="registrazione" onsubmit="return validaform();">
+        <p>cognome:
+            <input type="text" name="cognome" size="40" maxlength="40">
+        </p>
+        
+        <p>nome:
+            <input type="text" name="nome" size="40" maxlength="40">
+        </p>
+        <p>matricola:
+            <input type="text" name="matricola" size="10" maxlength="12">
+        </p>
+        <p>
+            regione:
+            <select name="regione">
+                <option value="nessuna" selected></option>
+                <option value="V. Aosta">val d'Aosta</option>
+                <option value="Piemonte">Piemonte</option>
+                <option value="Lombardia">Lombardia</option>
+                <option value="scimmia">scimmia</option>
+            </select>
+        </p>
+        <p>email:
+            <input type="text" name="email" size="30" maxlength="25">
+        </p>
+        <p>telefono:
+            <input type="text" name="tel" size="15" maxlength="15">
+        </p>
+        <p>richieste particolari:
+            <textarea  name="richieste" cols="30" rows="5"></textarea>
+        </p>
+        <br>
+            <input type="submit" value="invia!!">
+            <input type="reset" value="cancella!!">
+       
+    </form>
+    <p id="feedback"></p>
+</body>
+</html>
