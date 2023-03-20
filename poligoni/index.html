@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>data di nascita</title>
+    <script type="text/javascript" language="javascript">
+        function validaform(){
+            if(document.poligoni.lato.value == "")
+            {
+               alert("inserisci la misura del lato");
+               return false;
+            }
+            if(document.poligoni.figura.value == "")
+            {
+               document.getElementById("feedback").innerHTML="la matricola deve essere un numero"
+               return false;
+            }
+            let figura = parseInt(document.poligoni.figura.value)
+            let misura = parseInt(document.poligoni.lato.value)
+            if(isNaN(misura)){
+                document.getElementById("feedback").innerHTML="il lato deve essere un numero"
+                return false;
+            }
+            
+            document.getElementById("feedback").innerHTML="dati corretti"
+            document.getElementById("risultato").innerHTML= figura*misura
+        }
+        
+    </script>
+</head>
+<body>
+    <h1 align="center">PERIMETRO POLIGONI IRREGOLARI</h1>
+    <form name="poligoni" onsubmit="return validaform();">
+        <p>lato:
+            <input type="text" name="lato" size="40" maxlength="40">
+        </p>
+        <p>
+            figura:
+            <select name="figura">
+                <option value="3" selected></option>
+                <option value="4">quadrato</option>
+                <option value="5">pentagono</option>
+                <option value="6">esagono</option>
+                <option value="7">ettagono</option>
+            </select>
+        </p>
+        <br>
+            <input type="submit" value="invia!!">
+            <input type="reset" value="cancella!!">
+       
+    </form>
+    <p id="feedback"></p>
+    <p id="risultato"></p>
+</body>
+</html>
