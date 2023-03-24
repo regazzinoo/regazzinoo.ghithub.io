@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>tabella</title>
+    <link rel="stylesheet" href="tabella.css">
+    <script type="text/javascript" language="javascript">
+        function validaform(){
+            if(document.poligoni.lato.value == "")
+            {
+               alert("inserisci la misura del lato");
+               return false;
+            }
+            if(document.poligoni.figura.value == "")
+            {
+               document.getElementById("feedback").innerHTML="la matricola deve essere un numero"
+               return false;
+            }
+            let figura = parseInt(document.poligoni.figura.value)
+            let misura = parseInt(document.poligoni.lato.value)
+            if(isNaN(misura)){
+                document.getElementById("feedback").innerHTML="il lato deve essere un numero"
+                return false;
+            }
+            
+            document.getElementById("feedback").innerHTML="dati corretti"
+            document.getElementById("risultato").innerHTML= figura*misura
+        }
+        
+    </script>
+</head>
+<body>
+    <h1 align="center">CIBANZE</h1>
+    <form name="cibanze" onsubmit="return validaform();">
+        <p>
+            cibanze:
+            <select name="cibo">
+                <option value="hamburger" selected>hamburger</option>
+                <option value="pizza">pizza</option>
+                <option value="verdura">verdura</option>
+            </select>
+        </p>
+        <div class="grid-container">
+            <div class="item1">Header</div>
+            <div class="item2">Menu</div>
+            <div class="item3">Main</div>  
+            <div class="item4">Right</div>
+            <div class="item5">Footer</div>
+        </div>
+        <br>
+            <input type="submit" value="invia!!">
+            <input type="reset" value="cancella!!">
+       
+    </form>
+    <p id="feedback"></p>
+    <p id="risultato"></p>
+</body>
+</html>
