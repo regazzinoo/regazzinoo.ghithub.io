@@ -1,21 +1,20 @@
-.item1 { grid-area: imgdestra; }
+/*.item1 { grid-area: imgdestra; }
 .item2 { grid-area: imgmenoadestra; }
 .item3 { grid-area: imgmenoasinistra; }
-.item4 { grid-area: imgsionsistra; }
+.item4 { grid-area: imgsionsistra; }*/
 
 
 .grid-container {
   display: grid;
-  grid-template-areas:
-    'imgdestra imgmenoadestra imgmenoasinistra imgsionsistra'
-  gap: 10px;
-  background-color: #2196F3;
-  padding: 10px;
+  grid-template-columns: auto auto auto auto;
+  gap: 2px;
+  background-color: #ffbc04;
+  padding: 10px ;
 }
 
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
+.grid-item {
+  background-color: rgba(242, 97, 97, 0.8);
   text-align: center;
-  padding: 20px 0;
+  padding: 20px;
   font-size: 30px;
 }
