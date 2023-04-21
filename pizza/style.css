@@ -1,0 +1,25 @@
+.item {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid  gainsboro;
+    background-color: rgba(255, 255, 255, 0.8);
+    background-image: url("images/pizza.png");
+    background-repeat: no-repeat;
+    text-align: center;
+    height: 100px;
+    width: 150px;
+}
+
+.item:hover{
+    border: 2px solid black;
+}
+
+.gridpizze {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 10%;
+}
+
+body {
+    background-color: rgba(255, 242, 211, 0.895);
+}
