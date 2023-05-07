@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>campo minato</title>
+    <!--foglio di stile-->
+    <link rel="stylesheet" href="style/myStyle.css">
+    <!--script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script/myCella.js"></script>
+    <script src="script/myCampo.js"></script>
+    <script type="text/javascript">
+        /*
+        *
+        *
+        * FUNZIONA TUTTO TRANNE SE SI MODIFICA IL NUMERO DI COLONNE
+        * 
+        * 
+        * */
+        const tabelloneDefault = new myCampo(10, 10, 10);
+        tabelloneDefault.creaCampoDaGioco();
+
+        function generaCampo() {
+            let numeroMine = 0;
+            let numeroRighe = 0;
+            let numeroColonne = 0;
+            //prendi dalla select
+            let opzione = $('#difficolta').val();
+            if(opzione == "null"){
+                alert("scegliere una difficoltà");
+                return 0;
+            }
+            if (opzione == "facile"){
+                numeroMine = 10;
+                numeroRighe=30;
+                numeroColonne=30;
+            }
+            else if (opzione == "media"){
+                numeroMine = 15;
+                numeroRighe=30;
+                numeroColonne=30;
+            }
+            else{
+                numeroMine = 20;
+                numeroRighe=30;
+                numeroColonne=30;
+            }
+
+            const tabellone = new myCampo(numeroRighe, numeroColonne, numeroMine);
+            tabellone.eliminaTuttoHtml();
+            tabellone.creaCampo();
+
+            //controllo i click con il sinistro
+            $('.celleChiuse').on('click', function () {
+                //prendo riga e colonna
+                let rigaClick = parseInt($(this).attr("data-row"));
+                let colonnaClick = parseInt($(this).attr("data-coloumn"));
+                tabellone.controlloClick(rigaClick, colonnaClick);
+            });
+
+            //controllo click con il sinistro
+            $('.celleChiuse').on('contextmenu', function () {
+                event.preventDefault();
+                let clickedElement = $(event.target);
+                //prendo riga e colonna
+                let rClick = parseInt(clickedElement.attr("data-row"));
+                let cClick = parseInt(clickedElement.attr("data-coloumn"));
+                tabellone.mettiBandierina(rClick, cClick);
+            }); 
+            $('.celleBandierina').on('contextmenu', function () {
+                event.preventDefault();
+                let clickedElement = $(event.target);
+                //prendo riga e colonna
+                let rClick = parseInt(clickedElement.attr("data-row"));
+                let cClick = parseInt(clickedElement.attr("data-coloumn"));
+                tabellone.mettiBandierina(rClick, cClick);
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <h1 align="center">CAMPO MINATO</h1>
+    <!--seleziona difficoltà-->
+    difficoltà:
+    <select id="difficolta" onchange="generaCampo()">
+        <option selected value="nul"></option>
+        <option value="facile">facile</option>
+        <option value="media">media</option>
+        <option value="difficile">difficile</option>
+    </select>
+    <!--seleziona righe-->
+
+    <div align="center">
+                <div class="container-header">
+                    <div class="cellaSchermo" id="mine">
+                        numero mine:
+                    </div>
+                    <div class="cellaSchermo" id="ricomincia">
+                        <button onclick="tabelloneDefault.ricomincia()">reset</button>
+                    </div>
+                    <div class="cellaSchermo" id="feedback">
+                        partita in corso...
+                    </div>
+                </div>
+                <div class="container-playground" id="celle">
+
+                </div>
+
+    </div>
+</body>
+
+</html>

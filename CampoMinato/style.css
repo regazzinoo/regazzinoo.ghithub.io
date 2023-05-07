@@ -1,0 +1,72 @@
+/*schermo in alto*/
+.container-header{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 520px;
+    text-align: center;
+    margin-top: 5px;
+    height: 20px;
+}
+.cellaSchermo{
+    border: 1px solid black;
+    background-color: lightskyblue;
+}
+
+/*bottone reset*/
+button{
+    background-color: lightskyblue;
+    border: 1px solid lightskyblue;
+    width: 100%;
+}
+
+
+.cellaBianca {
+    background-image: url("images/j10.gif");
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    width: 50px;
+    height: 50px;
+    font-size: 25pt;
+    text-align: center;
+}
+.celleBandierina{
+    background-image: url(images/j11.gif);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    width: 50px;
+    height: 50px;
+}
+.cellaMina{
+    background-image: url(images/j9.gif);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    width: 50px;
+    height: 50px;
+}
+body{
+    background-color: antiquewhite;
+    text-align: center;
+}
+/*campo da gioco*/
+.container-playground{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+}
+/*tipi di celle*/
+.celleChiuse{
+    background-color: lightgray;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+}
+.celleChiuse:hover{
+    background-color: rgb(93, 93, 97);
+}
+p{
+    text-align: center;
+    font-size: 32pt;
+}
+#righe, #colonne{
+    width: 2%;
+}
+#crea{
+    width: 5%;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+}
