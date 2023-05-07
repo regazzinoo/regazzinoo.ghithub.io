@@ -18,7 +18,9 @@ table{
   -ms-user-select: none;
   user-select: none;
 }
-
+.toDO{
+  display: none;
+}
 tr.hover{
     background: #bfbfbf;
 }
@@ -50,7 +52,7 @@ tr.checked{
   width: 25%;
   background: #d9d9d9;
   color: #555;
-  float: left;
+  float: right;
   text-align: center;
   font-size: 16px;
   cursor: pointer;
