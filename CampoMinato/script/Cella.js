@@ -1,8 +1,8 @@
-class Cella{
-    //costruttore dell cella
-    constructor(){
-        this.numMineVicine = 0;
-        this.cellaIsMina = false;
-        this.stato = "chiusa";
-    }
+class Cella {
+	constructor() {
+		this.mina = false;
+		this.aperta = false;
+		this.cont = 0;
+		this.flag = false;
+	}
 }
