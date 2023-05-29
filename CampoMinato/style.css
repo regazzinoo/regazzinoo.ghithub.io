@@ -1,72 +1,65 @@
-/*schermo in alto*/
-.container-header{
+.display{
     display: grid;
     grid-template-columns: auto auto auto;
-    width: 520px;
-    text-align: center;
-    margin-top: 5px;
-    height: 20px;
+    width: 550px; 
+	margin: 10px;
 }
-.cellaSchermo{
+.disp-item{
     border: 1px solid black;
-    background-color: lightskyblue;
+    border-radius:7px;
+  background-color: rgba(123, 143, 134, 0.6);
 }
-
-/*bottone reset*/
-button{
-    background-color: lightskyblue;
-    border: 1px solid lightskyblue;
-    width: 100%;
+.div{
+	text-align: center;
 }
-
-
-.cellaBianca {
-    background-image: url("images/j10.gif");
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    width: 50px;
-    height: 50px;
-    font-size: 25pt;
-    text-align: center;
+.difficolta{
+font-family: 'Copperplate', sans-serif;
 }
-.celleBandierina{
-    background-image: url(images/j11.gif);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    width: 50px;
-    height: 50px;
+#griglia{
+	width: 550px;
+	height: 550px;
 }
-.cellaMina{
-    background-image: url(images/j9.gif);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    width: 50px;
-    height: 50px;
+h1{
+	text-align: center;
+    font-family: 'Copperplate', sans-serif;
 }
 body{
-    background-color: antiquewhite;
-    text-align: center;
+	text-align: center;
+	background-color:rgba(115, 200, 132, 0.921);
 }
-/*campo da gioco*/
-.container-playground{
-    display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
-}
-/*tipi di celle*/
-.celleChiuse{
-    background-color: lightgray;
+.cella {
+    border: 1px solid rgb(32, 31, 31);
+    display: inline-block;
     width: 50px;
     height: 50px;
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    background-color: #ccc;
+    cursor: pointer;
+	text-align: center;
+	margin: 1px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+	font-size: 32px;
+	position: relative;
+	vertical-align: middle;
 }
-.celleChiuse:hover{
-    background-color: rgb(93, 93, 97);
+.cella i {
+	
+	position: absolute;
+	transform: translate(50%,-50%);
+	top: 50%;
+	right: 50%;
 }
-p{
-    text-align: center;
-    font-size: 32pt;
+.cella:hover {
+	background-color: #aaa;
 }
-#righe, #colonne{
-    width: 2%;
+.aperta {
+	background-color: #fff;
 }
-#crea{
-    width: 5%;
-    border: 1px solid rgba(0, 0, 0, 0.8);
+.mina {
+	background-color: rgb(255,0,0);
+	color: #000;
 }
+.bandiera{
+	background-color: yellow;
+}
+          
