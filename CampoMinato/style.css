@@ -25,7 +25,7 @@ h1{
 }
 body{
 	text-align: center;
-	background-color:rgba(115, 200, 132, 0.921);
+	background-image:url("images/bg.jfif");
 }
 .cella {
     border: 1px solid rgb(32, 31, 31);
@@ -56,10 +56,14 @@ body{
 	background-color: #fff;
 }
 .mina {
-	background-color: rgb(255,0,0);
+	background-image: url("images/bomba.jpg");
 	color: #000;
+     background-repeat: no-repeat;
+  background-size: 50px;
 }
 .bandiera{
-	background-color: yellow;
+     background-image: url("images/bandiera.png");
+    background-repeat: no-repeat;
+  background-size: 50px;
 }
           
